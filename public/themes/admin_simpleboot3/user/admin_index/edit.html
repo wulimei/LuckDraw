@@ -1,0 +1,46 @@
+<include file="public@header" />
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:url('adminIndex/index')}">{:lang('USER_INDEXADMIN_INDEX')}</a></li>
+			<li><a href="{:url('adminIndex/add')}">{:lang('USER_ADMININDEX_ADD')}</a></li>
+			<li class="active"><a>{:lang('USER_ADMININDEX_EDIT')}</a></li>
+		</ul>
+		<form method="post" class="form-horizontal js-ajax-form margin-top-20" action="{:url('adminIndex/editPost')}">
+			<div class="form-group">
+				<label for="input-user_login" class="col-sm-2 control-label"><span class="form-required">*</span>{:lang('USERNAME')}</label>
+				<div class="col-md-6 col-sm-10">
+					<input type="text" class="form-control" id="input-user_login" name="user_login" value="{$user_login}">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="input-mobile" class="col-sm-2 control-label"><span class="form-required">*</span>{:lang('MOBILE')}</label>
+				<div class="col-md-6 col-sm-10">
+					<input type="text" class="form-control" id="input-mobile" name="mobile" value="{$mobile}">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="input-user_pass" class="col-sm-2 control-label"><span class="form-required">*</span>{:lang('PASSWORD')}</label>
+				<div class="col-md-6 col-sm-10">
+					<input type="text" class="form-control" id="input-user_pass" name="user_pass" value="" placeholder="******">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="input-user_email" class="col-sm-2 control-label"><span class="form-required">*</span>{:lang('EMAIL')}</label>
+				<div class="col-md-6 col-sm-10">
+					<input type="text" class="form-control" id="input-user_email" name="user_email" value="{$user_email}">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<input type="hidden" name="id" value="{$id}" />
+					<button type="submit" class="btn btn-primary js-ajax-submit">{:lang('SAVE')}</button>
+					<a class="btn btn-default" href="javascript:history.back(-1);">{:lang('BACK')}</a>
+				</div>
+			</div>
+		</form>
+	</div>
+	<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>
